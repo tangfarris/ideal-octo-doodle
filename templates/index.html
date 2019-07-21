@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>ᕕ(ᐛ)ᕗ</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="content">
+	<h1 style="text-align: center">Laptop Setups ᕕ(ᐛ)ᕗ</h1>		
+	{% for image in images %}
+	<p style="float: left">
+		<img src="{{ image.image }}" 
+		style="max-width: 500 px; max-height: 500px" align="left">
+		{% for c in image.content %}
+		<b>{{ c.name }}</b>
+		<a href="{{ c.link }}">LINK</a>
+		<br>
+		<span>{{ c.description }}</span>
+		<br>
+		<br>
+		{% endfor %}
+		<i text-align="bottom">Credit: {{ image.credit }}</i>
+	</p>
+	{% endfor %}		
+</div>
+
+{% endblock %}
